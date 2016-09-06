@@ -11,34 +11,36 @@ Tu carito de compras
     display: block;
 }
     </style>
-    <h1>Tu carrito de compras</h1>
+    <h4>Tu carrito</h4>
 
     <div class="mdl-grid">
 		<div class="mdl-cell mdl-cell--3-col">
 			   <a href="{% url "shop:product_list" %}" class="continue">Continuar comprando</a>
-			<div class="price-details">
-				<h3>Detalle de la Compra</h3>
-				<span>Total</span>
-				<span class="total1">${{ cart.get_total_price }}</span>
-{#				<span>Descuento</span>#}
-{#				<span class="total1">10%</span>#}
-				<div class="clearfix"></div>
-			</div>
-			<ul class="total_price">
-			   <li class="last_price"> <h4>TOTAL</h4></li>
-			   <li class="last_price"><span>${{ cart.get_total_price }}</span></li>
-			</ul>
 			<div class="clearfix"></div>
-			<div class="clearfix"></div>
-			<a class="order" href="{% url "orders:order_create" %}">Pagar</a>
-			<div class="total-item">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Detalle de la compra</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">
+                    Total: ${{ cart.get_total_price }}.
+                </span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="{% url "orders:order_create" %}" data-upgraded=",MaterialButton">
+                  Pagar
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+            <div class="total-item">
 				<h3>OPCIONES</h3>
 				<h4>CUPONES</h4>
 				<a class="cpns" href="#">Cambiar Cupones</a>
 			</div>
 		</div>
 		<div class="mdl-cell mdl-cell--9-col">
-			<h1>Productos</h1>
+			<h3>Productos</h3>
 			<div class="cart-header">
 				<div class="close1"> </div>
 			 </div>
