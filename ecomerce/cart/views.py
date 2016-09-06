@@ -4,7 +4,7 @@ from ecomerce.shop.models import Producto
 from .cart import Cart
 from .comparate import Comparar
 from .forms import CartAddProductForm, CompararAddProductForm
-
+from ecomerce.coupons.forms import CouponApplyForm
 
 # views cart
 @require_POST

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'ecomerce.shop',
     'ecomerce.cart',
     'ecomerce.orders',
+    'ecomerce.coupons',
 
     # api
     'rest_framework',
