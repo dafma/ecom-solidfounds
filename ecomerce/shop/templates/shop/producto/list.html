@@ -1,24 +1,28 @@
 {% extends 'basee.html' %}
 {% load staticfiles %}
 {% block contenido %}
-        <div class="items-sec">
-            {% for product in productos %}
-                <div class="col-md-3 feature-grid">
-                     <a href="{{ product.get_absolute_url }}"><img src="{{ product.imagen.url }}" alt=""/>
-                         <div class="arrival-info">
-                             <h4>{{ product.nombre }}</h4>
-                             <p> $ {{ product.precio }}</p>
-                             <span class="pric1"><del>Rs 18000</del></span>
-                             <span class="disc">[12% Off]</span>
-                         </div>
-                         <div class="viw">
-                            <a href="{{ product.get_absolute_url  }}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver</a>
-                         </div>
-                      </a>
-                 </div>
-            {% endfor %}
-			 <div class="clearfix"></div>
-        </div>
+    
+{% for product in productos %}
 
+    <div class="mdl-card mdl-shadow--2dp demo-card-square">
+        <a href="{{ product.get_absolute_url  }}">
+        <figure class="mdl-card__media">
+            <img src="{{ product.imagen.url }}" alt="" />
+        </figure>
+        <div class="mdl-card__supporting-text">
+            {{ product.nombre }}
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">$ {{ product.precio }}</a>
+            <div class="mdl-layout-spacer"></div>
+    	    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+        </div>
+        </a>
+  </div>
+{% endfor %}
 
 {% endblock %}
+
+
+
